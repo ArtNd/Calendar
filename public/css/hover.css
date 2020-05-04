@@ -2510,7 +2510,7 @@
 
 /* Float Shadow */
 .hvr-float-shadow {
-  display: inline-block;
+  display: flow;
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -2530,9 +2530,9 @@
   left: 5%;
   height: 10px;
   width: 90%;
-  opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  opacity: 0.2;
+  background: -webkit-radial-gradient(center, ellipse, rgba(244, 238, 100, 0.35) 0%, rgba(235, 230, 94, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(235, 230, 94, 0.35) 0%, rgba(235, 230, 94, 0) 80%);
   /* W3C */
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
