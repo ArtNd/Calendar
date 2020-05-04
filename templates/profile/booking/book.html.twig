@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+        <h1>Réserver</h1>
+        <div><h4>Au nom de :  <b>{{ user.lastName }} {{ user.name }}</b></h4></div>
+            <form action="{{ path('booking.new', {'id_user': user.id}) }}" method="post">
+                <div class="form-group">
+                    <label>Titre :</label>
+                    <input class="form-control" name="form[title]" value="{{title}}" type="text" />
+                </div>
+                <div class="form-group row">
+                    <div class="col">
+                        <label>Début :</label>
+                        <small class="form-text text-muted">AAAA-MM-JJ H:M</small>
+                        <input name="form[dateFrom]" value="{{ dates.from }}" type="datetime-local" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Fin :</label>
+                        <small class="form-text text-muted">AAAA-MM-JJ H:M</small>
+                        <input name="form[dateTo]" value="{{dates.to}}" type="datetime-local" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Vérifier la disponibilité" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Salle</th>
+                    <th>Disponibilité</th>
+                    <th>Capacité</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for room in rooms %}
+                    <tr>
+                        <td>{{room.title}}</td>
+                        <td>Disponible</td>
+                        <td>{{ room.capacity }}</td>
+                        {% if room.authorization == 1 %}
+                            <td>
+                                <a class="btn btn-success" href="{{ path('book.new.room', {'id_user': user.id, 'id_room': room.id, 'date_in': dates.from, 'date_out': dates.to, 'title': title, 'state': 1}) }}">Réserver maintenant</a>
+                            </td>
+                        {% elseif room.authorization == 0 %}
+                            <td>
+                                <a class="btn btn-info" href="{{ path('book.new.room', {'id_user': user.id, 'id_room': room.id, 'date_in': dates.from, 'date_out': dates.to, 'title': title, 'state': 0}) }}">Demander la réservation</a>
+                                <a tabindex="0" class="btn btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Pourquoi une demande de réservation ?" data-content="Cette salle nécessite l'accord d'un responsable pour que la réservation ait bien lieu">
+                                    <span class="fas fa-question-circle"></span>
+                                </a>
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('manager.booking.refuse', {'id': booking.id}) }}" style="display: inline-block" onsubmit="return confirm('Veuillez confirmer la suppression');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('refuse' ~ booking.id) }}">
+    <button class="btn btn-danger">Refuser</button>
+</form>

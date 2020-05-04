@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réserver{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-4">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <h1>Réserver</h1>
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Début</th>
+                    <th>Fin</th>
+                    <th>Salle</th>
+                    <th>Élève</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for booking in bookings %}
+                <tr>
+                    <td>{{ booking.title }}</td>
+                    <td>{{ booking.beginAt ? booking.beginAt|date('d/m H:i') : '' }}</td>
+                    <td>{{ booking.endAt ? booking.endAt|date('d/m H:i') : '' }}</td>
+                    <td>{{ booking.room.title }}</td>
+                    <td>{{ booking.user.name }} {{ booking.user.lastName }}</td>
+                    <td>
+                        <a href="{{ path('booking.show', {'id': booking.id}) }}" class="btn btn-secondary">Voir</a>
+                        {% if booking.user.id == app.user.id %}
+                            <a href="{{ path('booking.edit', {'id': booking.id}) }}" class="btn btn-primary">Éditer</a>
+                            {{ include('/profile/booking/_delete_form.html.twig') }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucune réservation existante...</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-right mt-4">
+            <a href="{{ path('booking.new', {'id_user': app.user.id}) }}" class="btn btn-primary">Réserver</a>
+        </div>
+    </div>
+{% endblock %}

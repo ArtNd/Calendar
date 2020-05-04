@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Éditer un utilisateur' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h2>Éditer l'utilisateur</h2>
+        {{ form_start(form) }}
+        {{ form_row(form.roles) }}
+        <button class="btn btn-primary" type="submit">Éditer</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+

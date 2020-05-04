@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title 'Administration' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col">Titre</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Managers</td>
+                    <td><a href="{{ path('admin.manager.index') }}" class="btn btn-secondary">Administrer</a></td>
+                </tr>
+                <tr>
+                    <td>Salles</td>
+                    <td><a href="{{ path('admin.room.index') }}" class="btn btn-secondary">Administrer</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

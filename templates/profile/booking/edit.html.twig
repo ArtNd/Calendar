@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer la réservation{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Éditer la réservation</h1>
+        {{ form_start(form) }}
+            {{ form_rest(form) }}
+            <div class="text-right">
+                <a href="{{ path('booking.index') }}" class="btn btn-secondary" style="display: inline-block">Retour</a>
+                <button class="btn btn-primary" >{{ button_label|default('Éditer') }}</button>
+                {{ include('/profile/booking/_delete_form.html.twig') }}
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

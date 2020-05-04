@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title 'Gérer les responsables' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-3 text-center">Administration des responsables</h1>
+    </div>
+
+    <div class="container mt-4">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Responsables</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Rôles</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td>{{ user.rolesString }}</td>
+                    <td><a href="{{ path('admin.manager.edit', {id: user.id}) }}" class="btn btn-secondary">Éditer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
