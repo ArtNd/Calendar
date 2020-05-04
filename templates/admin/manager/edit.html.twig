@@ -3,13 +3,36 @@
 {% block title 'Éditer un utilisateur' %}
 
 {% block body %}
-    <div class="container mt-4">
-        <h2>Éditer l'utilisateur</h2>
-        {{ form_start(form) }}
-        {{ form_row(form.roles) }}
-        <button class="btn btn-primary" type="submit">Éditer</button>
-        {{ form_end(form) }}
+    <style>
+        body{
+            background-image: url("../../Img/calendar 2.jpg");
+        }
+        body, tbody, thead{
+            color: white;
+        }
+        .jumbotron {
+            margin-top: 10px;
+            background-image: none;
+            background: rgba(0,0,0, 0.7);
+            border:1px solid rgba(0,0,0,0.1);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: center;
+        }
+    </style>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-3 text-center">Éditer les utilisateurs</h1>
     </div>
+    <div class="jumbotron">
+        <div class="container mt-4">
+            {{ form_start(form) }}
+            {{ form_row(form.roles) }}
+            <button class="btn btn-primary" type="submit">Éditer</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</body>
 
 {% endblock %}
 

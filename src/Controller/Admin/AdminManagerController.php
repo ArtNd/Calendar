@@ -37,7 +37,9 @@ class AdminManagerController extends AbstractController
     public function index(): Response
     {
         $users = $this->repository->findAll();
-        return $this->render('admin/manager/index.html.twig', compact('users'));
+        return $this->render('admin/manager/index.html.twig',
+            compact('users')
+        );
     }
 
     /**

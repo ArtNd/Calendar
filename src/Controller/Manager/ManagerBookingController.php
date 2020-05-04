@@ -19,7 +19,8 @@ class ManagerBookingController extends AbstractController
     public function index(BookingRepository $repository)
     {
         return $this->render('manager/index.html.twig', array(
-            'bookings' => $repository->findAuthorizedBookings(0)
+            'bookings' => $repository->findAuthorizedBookings(0),
+            'current_menu' => 'booking'
         ));
     }
 
@@ -38,7 +39,8 @@ class ManagerBookingController extends AbstractController
         $this->addFlash('success', 'Votre réservation a bien été acceptée.');
 
         return $this->render('manager/index.html.twig', array(
-            'bookings' => $repository->findAuthorizedBookings(0)
+            'bookings' => $repository->findAuthorizedBookings(0),
+            'current_menu' => 'booking'
         ));
     }
 
@@ -57,6 +59,8 @@ class ManagerBookingController extends AbstractController
             $this->addFlash('success', 'Désolé, votre réservation été refusée.');
         }
 
-        return $this->redirectToRoute('manager.booking.index');
+        return $this->redirectToRoute('manager.booking.index', [
+            'current_menu' => 'booking'
+        ]);
     }
 }

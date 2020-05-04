@@ -3,43 +3,60 @@
 {% block title %}Réservation{% endblock %}
 
 {% block body %}
-    <div class="container">
-    <h1>Booking</h1>
+    <style>
+        .jumbotron {
+            margin-top: 10px;
+            background-image: none;
+            background: rgba(0,0,0, 0.7);
+            border:1px solid rgba(0,0,0,0.1);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-    <table class="table mt-4">
-        <tbody>
-            <tr>
-                <th>Titre</th>
-                <td>{{ booking.title }}</td>
-            </tr>
-            <tr>
-                <th>Début</th>
-                <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Fin</th>
-                <td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Salle</th>
-                <td>{{ booking.room.title }}</td>
-            </tr>
-            <tr>
-                <th>Capacité</th>
-                <td>{{ booking.room.capacity }}</td>
-            </tr>
-            <tr>
-                <th>Élève</th>
-                <td>{{ booking.user.name }} {{ booking.user.lastName }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="text-right">
-        <a href="{{ path('booking.index') }}" class="btn btn-secondary">Retour</a>
-        {% if app.user.id == booking.user.id %}
-            {{ include('/profile/booking/_delete_form.html.twig') }}
-        {% endif %}
+            position: center;
+        }
+        body, tbody, thead{
+            color: white;
+        }
+    </style>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Booking</h1>
+            <table class="table mt-4 table-hover">
+                <tbody>
+                    <tr>
+                        <th>Titre</th>
+                        <td>{{ booking.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Début</th>
+                        <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fin</th>
+                        <td>{{ booking.endAt ? booking.endAt|date('Y-m-d H:i:s') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Salle</th>
+                        <td>{{ booking.room.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>Capacité</th>
+                        <td>{{ booking.room.capacity }}</td>
+                    </tr>
+                    <tr>
+                        <th>Élève</th>
+                        <td>{{ booking.user.name }} {{ booking.user.lastName }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-right">
+                <a href="{{ path('booking.index') }}" class="btn btn-secondary">Retour</a>
+                {% if app.user.id == booking.user.id %}
+                    {{ include('/profile/booking/_delete_form.html.twig') }}
+                {% endif %}
+            </div>
+        </div>
     </div>
-</div>
+</body>
 {% endblock %}
