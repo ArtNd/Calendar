@@ -2,24 +2,43 @@
 {% block title 'Administration' %}
 
 {% block body %}
-    <div class="container mt-4">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th class="col">Titre</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Managers</td>
-                    <td><a href="{{ path('admin.manager.index') }}" class="btn btn-secondary">Administrer</a></td>
-                </tr>
-                <tr>
-                    <td>Salles</td>
-                    <td><a href="{{ path('admin.room.index') }}" class="btn btn-secondary">Administrer</a></td>
-                </tr>
-            </tbody>
-        </table>
+    <style>
+        .jumbotron {
+            margin-top: 10px;
+            background-image: none;
+            background: rgba(0,0,0, 0.7);
+            border:1px solid rgba(0,0,0,0.1);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: center;
+        }
+        body, tbody, thead{
+            color: white;
+        }
+    </style>
+<body>
+    <div class="jumbotron">
+        <h1>Administration</h1>
+        <div class="container mt-4">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="col">Titre</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Managers</td>
+                        <td><a href="{{ path('admin.manager.index') }}" class="btn btn-secondary">Administrer</a></td>
+                    </tr>
+                    <tr>
+                        <td>Salles</td>
+                        <td><a href="{{ path('admin.room.index') }}" class="btn btn-secondary">Administrer</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+</body>
 {% endblock %}
