@@ -39,17 +39,17 @@
                     <ul class="navbar-nav">
                         {% if is_granted("ROLE_ADMIN") %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('admin') }}">Administration</a>
+                                <a class="nav-link hvr-bounce-to-right" href="{{ path('admin') }}">Administration</a>
                             </li>
                         {% endif %}
                         {% if app.user %}
                             {% if is_granted("ROLE_MANAGER") %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('manager.booking.index') }}">Espace manager</a>
+                                    <a class="nav-link hvr-bounce-to-right" href="{{ path('manager.booking.index') }}">Espace manager</a>
                                 </li>
                             {% endif %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('logout') }}">Se déconnecter</a>
+                                <a class="nav-link hvr-underline-from-right" href="{{ path('logout') }}">Se déconnecter</a>
                             </li>
                         {% else %}
                             <li class="nav-item">
