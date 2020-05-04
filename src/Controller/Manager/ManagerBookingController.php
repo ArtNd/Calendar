@@ -54,7 +54,7 @@ class ManagerBookingController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($booking);
             $entityManager->flush();
-            $this->addFlash('success', 'Votre réservation a bien été refusée.');
+            $this->addFlash('success', 'Désolé, votre réservation été refusée.');
         }
 
         return $this->redirectToRoute('manager.booking.index');
