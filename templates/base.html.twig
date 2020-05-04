@@ -5,66 +5,95 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css">
+        <link href="css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
+        <link href="css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/5e7b28d26f.js" crossorigin="anonymous"></script>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ path('home') }}">Calendar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <style>
+        a {
+            .nav-link {
+                color: #878787;
+                font-family: "Barlow Condensed Medium";
+                font-size: xx-small;
+            }
+        }
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        body {
+            height: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('booking.index') }}">Réserver</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('booking.calendar') }}">Calendrier</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    {% if is_granted("ROLE_ADMIN") %}
+            {% if current_menu is defined and current_menu == 'booking' %}
+                background-image: url("../../Img/calendar 2.jpg");
+            {% else %}
+                background-image: url("Img/calendar 2.jpg");
+            {% endif %}
+        }
+    </style>
+    <body>
+        <div class="sticky-top">
+            <nav class="shadow navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="{{ path('home') }}">Calendar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('admin') }}">Administration</a>
+                            <a class="nav-link hvr-underline-from-left" href="{{ path('booking.index') }}">Réserver</a>
                         </li>
-                    {% endif %}
-                    {% if app.user %}
-                        {% if is_granted("ROLE_MANAGER") %}
+                        <li class="nav-item">
+                            <a class="nav-link hvr-underline-from-right" href="{{ path('booking.calendar') }}">Calendrier</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        {% if is_granted("ROLE_ADMIN") %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('manager.booking.index') }}">Espace manager</a>
+                                <a class="nav-link hvr-bounce-to-right" href="{{ path('admin') }}">Administration</a>
                             </li>
                         {% endif %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('logout') }}">Se déconnecter</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('register') }}">S'inscrire</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('login') }}">Se connecter</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-    {% block body %}{% endblock %}
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js"></script>
-    <script src=""></script>
-    <script>
-        $('select').select2()
-    </script>
-    <script>
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-        })
-    </script>
-    {% block javascripts %}{% endblock %}
+                        {% if app.user %}
+                            {% if is_granted("ROLE_MANAGER") %}
+                                <li class="nav-item">
+                                    <a class="nav-link hvr-bounce-to-right" href="{{ path('manager.booking.index') }}">Espace manager</a>
+                                </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-right" href="{{ path('logout') }}">Se déconnecter</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-left" href="{{ path('register') }}">S'inscrire</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link hvr-underline-from-right" href="{{ path('login') }}">Se connecter</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        {% block body %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js"></script>
+        <script>
+            $('select').select2()
+        </script>
+        <script>
+            $(function () {
+                $('[data-toggle="popover"]').popover()
+            })
+        </script>
+            {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -13,7 +13,7 @@ class AccessDeniedHandler implements AccessDeniedHandlerInterface
 {
     public function handle(Request $request, AccessDeniedException $accessDeniedException): Response
     {
-        $content = "T'as pas les droits espèce de batard 😝";
+        $content = "Vous n'avez pas les droits, si vous pensez qu'ils s'agit d'un erreur veuillez contacter Payicam";
         return new Response($content, 403);
     }
 }

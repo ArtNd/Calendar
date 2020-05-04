@@ -3,44 +3,62 @@
 {% block title %}Gestion des réservations{% endblock %}
 
 {% block body %}
+<style>
+    .jumbotron {
+        margin-top: 10px;
+        background-image: none;
+        background: rgba(0,0,0, 0.7);
+        border:1px solid rgba(0,0,0,0.1);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
 
+        position: center;
+    }
+    body, tbody, thead{
+        color: white;
+    }
+</style>
+<body>
     <div class="container mt-4">
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-        {% endfor %}
-        <h1>Réservations en attente</h1>
-        <table class="table mt-4">
-            <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Début</th>
-                <th>Fin</th>
-                <th>Élève</th>
-                <th>Salle</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for booking in bookings %}
-                <tr>
-                    <td>{{ booking.title }}</td>
-                    <td>{{ booking.beginAt ? booking.beginAt|date('d/m H:i') : '' }}</td>
-                    <td>{{ booking.endAt ? booking.endAt|date('d/m H:i') : '' }}</td>
-                    <td>{{ booking.room.title }}</td>
-                    <td>{{ booking.user.name }} {{ booking.user.lastName }}</td>
-                    <td>
-                        <a href="{{ path('manager.acceptBooking', {'id': booking.id}) }}" class="btn btn-success">Autoriser</a>
-                        {{ include('/profile/booking/_refuse_form.html.twig') }}
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="5">Aucune demande de réservation existante...</td>
-                </tr>
+        <div class="jumbotron ">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
             {% endfor %}
-            </tbody>
-        </table>
+            <h1>Réservations en attente</h1>
+            <table class="table mt-4 table-hover">
+                <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Début</th>
+                    <th>Fin</th>
+                    <th>Élève</th>
+                    <th>Salle</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.title }}</td>
+                        <td>{{ booking.beginAt ? booking.beginAt|date('d/m H:i') : '' }}</td>
+                        <td>{{ booking.endAt ? booking.endAt|date('d/m H:i') : '' }}</td>
+                        <td>{{ booking.room.title }}</td>
+                        <td>{{ booking.user.name }} {{ booking.user.lastName }}</td>
+                        <td>
+                            <a href="{{ path('manager.acceptBooking', {'id': booking.id}) }}" class="btn btn-success">Autoriser</a>
+                            {{ include('/profile/booking/_refuse_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Aucune demande de réservation existante...</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
+</body>
 {% endblock %}

@@ -2,8 +2,8 @@
 {% block body %}
     <div class="jumbotron">
         <div class="container">
-        <h1>Réserver</h1>
-        <div><h4>Au nom de :  <b>{{ user.lastName }} {{ user.name }}</b></h4></div>
+            <h1>Réserver</h1>
+            <div><h4>Au nom de :  <b>{{ user.name }} {{ user.lastName }} </b></h4></div>
             <form action="{{ path('booking.new', {'id_user': user.id}) }}" method="post">
                 <div class="form-group">
                     <label>Titre :</label>
