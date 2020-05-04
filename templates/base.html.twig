@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css">
         <link href="css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
         <link href="css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/5e7b28d26f.js" crossorigin="anonymous"></script>
         {% block stylesheets %}{% endblock %}
     </head>
@@ -18,10 +19,22 @@
                 font-size: xx-small;
             }
         }
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        body {
+            height: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
+            background-image: url("Img/calendar 2.jpg");
+        }
     </style>
     <body>
         <div class="sticky-top">
-            <nav class="shadow navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="shadow navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="{{ path('home') }}">Calendar</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -69,7 +82,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js"></script>
-        <script src=""></script>
         <script>
             $('select').select2()
         </script>
@@ -78,6 +90,6 @@
                 $('[data-toggle="popover"]').popover()
             })
         </script>
-        {% block javascripts %}{% endblock %}
+            {% block javascripts %}{% endblock %}
     </body>
 </html>
