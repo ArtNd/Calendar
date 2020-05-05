@@ -1,25 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'profile/booking/base_booking.html.twig' %}
 
 {% block title %}Réservation{% endblock %}
 
 {% block body %}
     <style>
-        .jumbotron {
-            margin-top: 10px;
-            background-image: none;
-            background: rgba(0,0,0, 0.7);
-            border:1px solid rgba(0,0,0,0.1);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-
-            position: center;
-        }
         body, tbody, thead{
             color: white;
         }
     </style>
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron transparence">
         <div class="container">
             <h1>Booking</h1>
             <table class="table mt-4 table-hover">

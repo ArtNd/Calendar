@@ -1,43 +1,52 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/room/base_room.html.twig' %}
 {% block title 'Gérer les salles' %}
 
 {% block body %}
-    <div class="jumbotron">
+    <head>
+        <link href="../css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
+        <link href="../css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
+    </head>
+    <style>
+
+    </style>
+<body>
+    <div class="jumbotron transparence">
         <h1 class="display-3 text-center">Administration des salles</h1>
     </div>
-
-    <div class="container mt-4">
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success">
-                {{ message }}
-            </div>
-        {% endfor %}
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Titre</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for room in rooms %}
-                <tr>
-                    <td>{{ room.title }}</td>
-                    <td>
-                        <a href="{{ path('admin.room.edit', {id: room.id}) }}" class="btn btn-secondary">Éditer</a>
-                        <form method="post" action="{{ path('admin.room.delete', {'id': room.id}) }}" style="display: inline-block" onsubmit="return confirm ('Veuillez confimer la suppression')">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ room.id) }}">
-                            <button class="btn btn-danger">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
+    <div class="jumbotron transparence">
+        <div class="container mt-4">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
             {% endfor %}
-            </tbody>
-        </table>
-        <div class="text-right">
-            <a href="{{ path('admin.room.new') }}" class="btn btn-primary">Créer</a>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for room in rooms %}
+                    <tr>
+                        <td>{{ room.title }}</td>
+                        <td>
+                            <a href="{{ path('admin.room.edit', {id: room.id}) }}" class="btn btn-secondary">Éditer</a>
+                            <form method="post" action="{{ path('admin.room.delete', {'id': room.id}) }}" style="display: inline-block" onsubmit="return confirm ('Veuillez confimer la suppression')">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ room.id) }}">
+                                <button class="btn btn-danger">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="text-right">
+                <a href="{{ path('admin.room.new') }}" class="btn btn-primary">Créer</a>
+            </div>
         </div>
-
     </div>
+</body>
 {% endblock %}

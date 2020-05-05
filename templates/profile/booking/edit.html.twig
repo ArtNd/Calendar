@@ -2,21 +2,12 @@
 {% block title %}Éditer la réservation{% endblock %}
 {% block body %}
     <style>
-        .jumbotron {
-            margin-top: 10px;
-            background-image: none;
-            background: rgba(0,0,0, 0.7);
-            border:1px solid rgba(0,0,0,0.1);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: center;
-        }
         body, tbody, thead{
             color: white;
         }
     </style>
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron transparence">
         <div class="container">
             <h1>Éditer la réservation</h1>
             {{ form_start(form) }}

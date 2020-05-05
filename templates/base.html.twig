@@ -5,21 +5,22 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css">
-        {% if current_menu is defined and current_menu == 'booking' %}
-            <link href="../../css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
-            <link href="../../css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
-        {% elseif current_menu is defined and current_menu == 'booking' %}
-            <link href="../../../css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
-            <link href="../../../css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
-        {% else %}
-            <link href="css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
-            <link href="css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
-        {% endif %}
+        <link href="css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
+        <link href="css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script src="https://kit.fontawesome.com/5e7b28d26f.js" crossorigin="anonymous"></script>
         {% block stylesheets %}{% endblock %}
     </head>
     <style>
+        .transparence {
+            margin-top: 10px;
+            background-image: none;
+            background: rgba(0,0,0, 0.7);
+            border:1px solid rgba(0,0,0,0.1);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: center;
+        }
         a {
             .nav-link {
                 color: #878787;
@@ -36,6 +37,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            color: white;
 
             {% if current_menu is defined and current_menu == 'booking' %}
                 background-image: url("../../Img/calendar 2.jpg");

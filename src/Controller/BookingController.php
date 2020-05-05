@@ -27,16 +27,16 @@ class BookingController extends AbstractController
             'bookings' => $bookingRepository->findAuthorizedBookings(1),
             'current_menu' => 'booking'
 
-        ]);
-//        return $this->render( ['current_menu' => 'booking']);
-    }
+        ]);}
 
     /**
      * @Route("/calendar", name="booking.calendar", methods={"GET"})
      */
     public function calendar(): Response
     {
-        return $this->render('/profile/booking/calendar.html.twig');
+        return $this->render('/profile/booking/calendar.html.twig',[
+            "current_menu" => "booking"
+        ]);
     }
 
     /**
@@ -83,10 +83,8 @@ class BookingController extends AbstractController
             ->find($id_user);
 
         $data['user'] = $user;
-
-        return $this->render("profile/booking/book.html.twig", $data, [
-            'current_menu' => 'booking'
-        ]);
+        return $this->render("profile/booking/book.html.twig", $data
+        );
     }
 
     /**

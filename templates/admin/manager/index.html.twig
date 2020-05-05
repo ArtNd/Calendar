@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/manager/base_manager.html.twig' %}
 {% block title 'Gérer les responsables' %}
 
 {% block body %}
@@ -9,21 +9,12 @@
         body, tbody, thead{
             color: white;
         }
-        .jumbotron {
-            margin-top: 10px;
-            background-image: none;
-            background: rgba(0,0,0, 0.7);
-            border:1px solid rgba(0,0,0,0.1);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: center;
-        }
     </style>
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron transparence">
         <h1 class="display-3 text-center">Administration des responsables</h1>
     </div>
-    <div class="jumbotron">
+    <div class="jumbotron transparence">
         <div class="container mt-4">
             {% for message in app.flashes('success') %}
                 <div class="alert alert-success">

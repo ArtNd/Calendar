@@ -1,26 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'manager/base_manager.html.twig' %}
 
 {% block title %}Gestion des réservations{% endblock %}
 
 {% block body %}
 <style>
-    .jumbotron {
-        margin-top: 10px;
-        background-image: none;
-        background: rgba(0,0,0, 0.7);
-        border:1px solid rgba(0,0,0,0.1);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-
-        position: center;
-    }
     body, tbody, thead{
         color: white;
     }
 </style>
 <body>
     <div class="container mt-4">
-        <div class="jumbotron ">
+        <div class="jumbotron transparence">
             {% for message in app.flashes('success') %}
                 <div class="alert alert-success">
                     {{ message }}

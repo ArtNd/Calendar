@@ -2,14 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/base_admin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/manager/base_manager.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/room/base_room.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profile/booking/base_booking.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/manager/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/manager/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/manager/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/manager/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/room/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/room/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/room/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/room/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/room/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/room/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing_page.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing_page.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/manager/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/manager/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/booking/_refuse_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/_refuse_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/booking/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/book.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/booking/calendar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/calendar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/booking/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/booking/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/booking/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/register.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,10 +204,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/manager" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/profile/booking" />
+      <recent name="$PROJECT_DIR$/templates/admin/room" />
+      <recent name="$PROJECT_DIR$/templates/admin/manager" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/profile" />
     </key>
@@ -212,12 +233,24 @@
       <workItem from="1588584843658" duration="457000" />
       <workItem from="1588600764366" duration="833000" />
       <workItem from="1588618332655" duration="390000" />
-      <workItem from="1588670734555" duration="2474000" />
+      <workItem from="1588670734555" duration="8395000" />
     </task>
+    <task id="LOCAL-00001" summary="amélioration de la technique de déplacement de dossier en render">
+      <created>1588673644029</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588673644029</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="amélioration de la technique de déplacement de dossier en render" />
+    <option name="LAST_COMMIT_MESSAGE" value="amélioration de la technique de déplacement de dossier en render" />
   </component>
   <component name="WindowStateProjectService">
     <state x="373" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588670823904">
@@ -241,6 +274,10 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="483" y="302" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.821@0.23.1440.821" timestamp="1588080447642" />
+    <state x="423" y="101" key="CommitChangelistDialog2" timestamp="1588673643555">
+      <screen x="0" y="0" width="1680" height="998" />
+    </state>
+    <state x="423" y="101" key="CommitChangelistDialog2/0.0.1680.998@0.0.1680.998" timestamp="1588673643555" />
     <state x="451" y="257" key="NewPhpClassDialog" timestamp="1588536796530">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
