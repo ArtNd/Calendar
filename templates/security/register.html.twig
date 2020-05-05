@@ -2,17 +2,21 @@
 {% block title "S'enregistrer" %}
 
 {% block body %}
-    <div class="container mt-4">
-        <h1>S'inscrire</h1>
-        {{ form_start(form) }}
-            {{ form_row(form.username) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.name) }}
-            {{ form_row(form.lastName) }}
-            {{ form_row(form.password.first) }}
-            {{ form_row(form.password.second) }}
-            <button class="btn btn-primary" type="submit">S'enregistrer</button>
-        {{ form_end(form) }}
+<body>
+    <div class="jumbotron transparence">
+        <div class="container mt-4">
+            <h1>S'inscrire</h1>
+            {{ form_start(form) }}
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.name) }}
+                {{ form_row(form.lastName) }}
+                {{ form_row(form.password.first) }}
+                {{ form_row(form.password.second) }}
+                <button class="btn btn-primary" type="submit">S'enregistrer</button>
+            {{ form_end(form) }}
+        </div>
     </div>
+</body>
 {% endblock %}
 

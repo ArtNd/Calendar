@@ -1,6 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'profile/booking/base_booking.html.twig' %}
+
 {% block body %}
-    <div class="jumbotron">
+<body>
+    <div class="jumbotron transparence">
         <div class="container">
             <h1>Réserver</h1>
             <div><h4>Au nom de :  <b>{{ user.name }} {{ user.lastName }} </b></h4></div>
@@ -27,37 +29,40 @@
             </form>
         </div>
     </div>
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Salle</th>
-                    <th>Disponibilité</th>
-                    <th>Capacité</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for room in rooms %}
+    <div class="jumbotron transparence">
+        <div class="container">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>{{room.title}}</td>
-                        <td>Disponible</td>
-                        <td>{{ room.capacity }}</td>
-                        {% if room.authorization == 1 %}
-                            <td>
-                                <a class="btn btn-success" href="{{ path('book.new.room', {'id_user': user.id, 'id_room': room.id, 'date_in': dates.from, 'date_out': dates.to, 'title': title, 'state': 1}) }}">Réserver maintenant</a>
-                            </td>
-                        {% elseif room.authorization == 0 %}
-                            <td>
-                                <a class="btn btn-info" href="{{ path('book.new.room', {'id_user': user.id, 'id_room': room.id, 'date_in': dates.from, 'date_out': dates.to, 'title': title, 'state': 0}) }}">Demander la réservation</a>
-                                <a tabindex="0" class="btn btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Pourquoi une demande de réservation ?" data-content="Cette salle nécessite l'accord d'un responsable pour que la réservation ait bien lieu">
-                                    <span class="fas fa-question-circle"></span>
-                                </a>
-                            </td>
-                        {% endif %}
+                        <th>Salle</th>
+                        <th>Disponibilité</th>
+                        <th>Capacité</th>
+                        <th>Action</th>
                     </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for room in rooms %}
+                        <tr>
+                            <td>{{room.title}}</td>
+                            <td>Disponible</td>
+                            <td>{{ room.capacity }}</td>
+                            {% if room.authorization == 1 %}
+                                <td>
+                                    <a class="btn btn-success" href="{{ path('book.new.room', {'id_user': user.id, 'id_room': room.id, 'date_in': dates.from, 'date_out': dates.to, 'title': title, 'state': 1}) }}">Réserver maintenant</a>
+                                </td>
+                            {% elseif room.authorization == 0 %}
+                                <td>
+                                    <a class="btn btn-info" href="{{ path('book.new.room', {'id_user': user.id, 'id_room': room.id, 'date_in': dates.from, 'date_out': dates.to, 'title': title, 'state': 0}) }}">Demander la réservation</a>
+                                    <a tabindex="0" class="btn btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Pourquoi une demande de réservation ?" data-content="Cette salle nécessite l'accord d'un responsable pour que la réservation ait bien lieu">
+                                        <span class="fas fa-question-circle"></span>
+                                    </a>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
+</body>
 {% endblock %}

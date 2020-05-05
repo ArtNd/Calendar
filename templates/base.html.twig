@@ -12,6 +12,15 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <style>
+        .transparence {
+            margin-top: 10px;
+            background-image: none;
+            background: rgba(0,0,0, 0.7);
+            border:1px solid rgba(0,0,0,0.1);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: center;
+        }
         a {
             .nav-link {
                 color: #878787;
@@ -28,9 +37,12 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            color: white;
 
             {% if current_menu is defined and current_menu == 'booking' %}
                 background-image: url("../../Img/calendar 2.jpg");
+            {% elseif current_menu is defined and current_menu == 'edit' %}
+                background-image: url("../../../Img/calendar 2.jpg");
             {% else %}
                 background-image: url("Img/calendar 2.jpg");
             {% endif %}

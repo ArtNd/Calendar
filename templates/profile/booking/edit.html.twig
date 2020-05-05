@@ -1,18 +1,25 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Éditer la réservation{% endblock %}
-
 {% block body %}
-    <div class="container">
-        <h1>Éditer la réservation</h1>
-        {{ form_start(form) }}
-            {{ form_row(form.title) }}
-            {{ form_row(form.beginAt) }}
-            {{ form_row(form.endAt) }}
-            <div class="text-right">
-                <a href="{{ path('booking.index') }}" class="btn btn-secondary" style="display: inline-block">Retour</a>
-                <button class="btn btn-primary" >{{ button_label|default('Éditer') }}</button>
-            </div>
-        {{ form_end(form) }}
+    <style>
+        body, tbody, thead{
+            color: white;
+        }
+    </style>
+<body>
+    <div class="jumbotron transparence">
+        <div class="container">
+            <h1>Éditer la réservation</h1>
+            {{ form_start(form) }}
+                {{ form_row(form.title) }}
+                {{ form_row(form.beginAt) }}
+                {{ form_row(form.endAt) }}
+                <div class="text-right">
+                    <a href="{{ path('booking.index') }}" class="btn btn-secondary" style="display: inline-block">Retour</a>
+                    <button class="btn btn-primary" >{{ button_label|default('Éditer') }}</button>
+                </div>
+            {{ form_end(form) }}
+        </div>
     </div>
+</body>
 {% endblock %}

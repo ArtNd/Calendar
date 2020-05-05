@@ -1,12 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/room/base_room.html.twig' %}
 
 {% block title 'Créer une salle' %}
 
 {% block body %}
-    <div class="container mt-4">
-        <h2>Créer une salle</h2>
-        {{ include ('admin/room/_form.html.twig', {button: 'Créer'}) }}
+<body>
+    <div class="jumbotron transparence">
+        <div class="container mt-4">
+            <h2>Créer une salle</h2>
+            {{ include ('admin/room/_form.html.twig', {button: 'Créer'}) }}
+        </div>
     </div>
-
+</body>
 {% endblock %}
 

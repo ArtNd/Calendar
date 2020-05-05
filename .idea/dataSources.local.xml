@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="projetweb@localhost" uuid="5d85a6ca-8d1f-4fe6-8f0a-fa50ebe3b31b">
+    <data-source name="Calendar@localhost" uuid="e4856f2d-8ec7-441b-b9fc-85a28efef539">
       <database-info product="MySQL" version="8.0.19" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.6.0" dbms="MYSQL" exact-version="8.0.19" exact-driver-version="2.6">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>

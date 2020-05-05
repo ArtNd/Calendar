@@ -1,26 +1,17 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base_admin.html.twig' %}
 {% block title 'Administration' %}
 
 {% block body %}
     <style>
-        .jumbotronn  {
-            margin-top: 10px;
-            background-image: none;
-            background: rgba(0,0,0, 0.7);
-            border:1px solid rgba(0,0,0,0.1);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: center;
-        }
         body, tbody, thead{
             color: white;
         }
     </style>
 <body>
-    <div class="jumbotron">
-        <h1 style="color: black" class="display-3 text-center">Administration</h1>
+    <div class="jumbotron transparence">
+        <h1 class="display-3 text-center">Administration</h1>
     </div>
-    <div class="jumbotronn">
+    <div class="jumbotron transparence">
         <div class="container mt-4">
             <table class="table table-hover">
                 <thead>

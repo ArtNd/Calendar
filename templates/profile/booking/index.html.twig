@@ -1,24 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends 'profile/booking/base_booking.html.twig' %}
 
 {% block title %}Réserver{% endblock %}
 
 {% block body %}
+    <head>
+        <link href="../../../../css/hover.css" rel="stylesheet"> {#pour avoir les mouvement de boutons#}
+        <link href="../../../../css/snowfall.css" rel="stylesheet"> {#pour avoir les snowballs#}
+    </head>
     <style>
-        .jumbotron {
-        margin-top: 10px;
-        background-image: none;
-        background: rgba(0,0,0, 0.7);
-        border:1px solid rgba(0,0,0,0.1);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        position: center;
-        }
         body, tbody, thead{
             color: white;
         }
     </style
 <body>
-    <div class="jumbotron">
+    <div class="jumbotron transparence">
         <div class="container mt-4">
             {% for message in app.flashes('success') %}
                 <div class="alert alert-success">
