@@ -23,11 +23,13 @@
         <div class="container">
             <h1>Booking</h1>
             <table class="table mt-4 table-hover">
-                <tbody>
+                <thead>
                     <tr>
                         <th>Titre</th>
                         <td>{{ booking.title }}</td>
                     </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <th>Début</th>
                         <td>{{ booking.beginAt ? booking.beginAt|date('Y-m-d H:i:s') : '' }}</td>

@@ -26,7 +26,9 @@ class BookingController extends AbstractController
         return $this->render ('/profile/booking/index.html.twig', [
             'bookings' => $bookingRepository->findAuthorizedBookings(1),
             'current_menu' => 'booking'
+
         ]);
+//        return $this->render( ['current_menu' => 'booking']);
     }
 
     /**
@@ -82,7 +84,7 @@ class BookingController extends AbstractController
 
         $data['user'] = $user;
 
-        return $this->render("profile/booking/book.html.twig", $data ,[
+        return $this->render("profile/booking/book.html.twig", $data, [
             'current_menu' => 'booking'
         ]);
     }
@@ -125,10 +127,8 @@ class BookingController extends AbstractController
             $this->addFlash('success', 'Votre réservation a bien été effectuée.');
         }
 
-        return $this->redirectToRoute('booking.index',[
-            'current_menu' => 'booking'
-        ]);
-
+        return $this->redirectToRoute('booking.index');
+        return $this->render( ['current_menu' => 'booking']);
     }
 
     /**
@@ -156,10 +156,10 @@ class BookingController extends AbstractController
             return $this->redirectToRoute('booking.index');
         }
 
-        return $this->render('/profile/booking/edit.html.twig', [
+        return $this->render('/profile/booking/edit.html.twig',[
             'booking' => $booking,
             'form' => $form->createView(),
-            'current_menu' => 'booking'
+            'current_menu' => 'edit'
         ]);
     }
 
@@ -175,8 +175,6 @@ class BookingController extends AbstractController
             $this->addFlash('success', 'Votre réservation a bien été supprimée.');
         }
 
-        return $this->redirectToRoute('booking.index', [
-            'current_menu' => 'booking'
-        ]);
+        return $this->redirectToRoute('booking.index');
     }
 }

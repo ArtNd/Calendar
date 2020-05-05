@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/booking/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/booking/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,25 +36,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetweb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="Calendar@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetweb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="Calendar@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetweb@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="Calendar@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projetweb: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="projetweb@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="projetweb: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="booking: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="Calendar: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -188,6 +186,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -213,6 +212,7 @@
       <workItem from="1588584843658" duration="457000" />
       <workItem from="1588600764366" duration="833000" />
       <workItem from="1588618332655" duration="390000" />
+      <workItem from="1588670734555" duration="2474000" />
     </task>
     <servers />
   </component>
@@ -220,9 +220,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588066357466">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="373" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588670823904">
+      <screen x="0" y="0" width="1680" height="998" />
     </state>
+    <state x="373" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.998@0.0.1680.998" timestamp="1588670823904" />
     <state x="320" y="99" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.821@0.23.1440.821" timestamp="1588066357466" />
     <state x="431" y="243" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588068482197">
       <screen x="0" y="23" width="1440" height="821" />
