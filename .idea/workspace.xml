@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5d85a6ca-8d1f-4fe6-8f0a-fa50ebe3b31b/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/landing_page.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/landing_page.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +213,7 @@
       <workItem from="1588600764366" duration="833000" />
       <workItem from="1588618332655" duration="390000" />
       <workItem from="1588670734555" duration="12906000" />
+      <workItem from="1588772554501" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="amélioration de la technique de déplacement de dossier en render">
       <created>1588673644029</created>
