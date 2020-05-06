@@ -11,8 +11,6 @@
             background: rgba(0,0,0,0.7);
             color: white;
         }
-
-        * { color:#fff; text-decoration: none;}
     </style>
     <body>
         <div class="hero-image">
@@ -93,13 +91,22 @@
                     <div class="container d-block">
                         <a style="height: 300px" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-controls="multiCollapseExample1">
                             <div class="hvr-float-shadow shadow jumbotron transparence text-center py-5">
-                                <img class="bd-placeholder-img" src="../Img/Logo.png" style="width: 120px">
-                                <h1 style="font-family: 'Barlow Condensed Thin';font-size: 70px">Calendar.</h1>
-                                <h1>
-                                    <a href="#" class="typewrite" data-period="5000" data-type='[ "Coucou, comment vas-tu ?", "Clique ici pour plus d"infos", "Réserve une salle 😄", "Connecte toi" ]'>
-                                        <span class="wrap"></span>
-                                    </a>
-                                </h1>
+                                <div>
+                                    <img class="bd-placeholder-img" src="../Img/Logo.png" style="width: 120px">
+                                </div>
+                                <div>
+                                    <h1 class="hvr-underline-reveal" style="font-family: 'Circular';font-size: 70px; color: white">Calendar<t style="color: rgba(235,230,94,0.9)">.</t></h1>
+                                    <h1>
+                                        <a href="#" class="typewrite" data-period="5000" data-type='[ "Coucou, comment vas-tu ?", "Clique ici pour plus d"infos", "Réserve une salle 😄", "Connecte toi" ]'>
+                                            <span class="wrap"></span>
+                                        </a>
+                                    </h1>
+                                    <h1>
+                                        <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im VipulM.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                                            <span class="wrap"></span>
+                                        </a>
+                                    </h1>
+                                </div>
                                 <span style="color: #EBE65E; font-family: 'Barlow Condensed Thin'; font-size: 25px">Pour une organisation connectée</span>
                             </div>
                         </a>
@@ -108,21 +115,24 @@
                         <div class="row">
                             <div class="collapse multi-collapse" id="multiCollapseExample1">
                                 <div class="card card-body" style="width: auto">
-                                    <p class="text-monospace">
+                                    <p class="text-monospace hvr-underline-reveal">
                                         Calendar est un site de réservation de salles qui peut être mis à disposition pour l’environnement informatique d’un école ou d’un établissement (par exemple l'ICAM).
                                     </p>
-                                    <p class="text-monospace">
+                                    <p class="text-monospace hvr-underline-reveal">
                                         Ce site permet à un élève ou tout autre personne autorisée de réserver l’accès à une salle de classe, une salle de sport, aux salles des associations étudiantes…
                                     </p>
-                                    <p class="text-monospace">
+                                    <p class="text-monospace hvr-underline-reveal">
                                         Concernant la réservation des salles, certaines peuvent être réservées par tout le monde, d’autres requièrent l’autorisation d’un administrateur des salles (membre de l’établissement, membre du BDE, membre désigné des assos mettant à disposition leurs salles, etc.).
                                     </p>
-                                    <p class="text-monospace">
+                                    <p class="text-monospace hvr-underline-reveal">
                                         Pour réserver une salle, il faudra indiquer dans un formulaire ; le nom d’une salle (liste déroulante, l’heure de début de créneau, l’heure de fin de créneau, les participants, le motif, etc.)
                                     </p>
-                                    <p class="text-monospace">
+                                    <p class="text-monospace hvr-underline-reveal">
                                         Le site web se divisera en deux avec d’un côté, un partie client (frontend) accessible par tous, et une partie administrateur (backend) accessible uniquement pour certains utilisateurs.
                                    </p>
+                                    <button type="button" class="btn btn-warning hvr-ripple-in" style="background: rgba(244,238,100,0.9)">
+                                        Plus d'infos ?
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -131,6 +141,4 @@
             </div>
         </div>
     </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
 {% endblock %}

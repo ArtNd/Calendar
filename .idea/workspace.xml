@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="Ajout d'une animation ouf">
+    <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/booking/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Netflix./.env" beforeDir="false" afterPath="$PROJECT_DIR$/../Netflix./.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +211,7 @@
       <workItem from="1588584843658" duration="457000" />
       <workItem from="1588600764366" duration="833000" />
       <workItem from="1588618332655" duration="390000" />
-      <workItem from="1588670734555" duration="12843000" />
+      <workItem from="1588670734555" duration="12906000" />
     </task>
     <task id="LOCAL-00001" summary="amélioration de la technique de déplacement de dossier en render">
       <created>1588673644029</created>
@@ -278,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588690939742</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="modif d'un tableau">
+      <created>1588691894190</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588691894190</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +297,8 @@
     <MESSAGE value="reglage logo" />
     <MESSAGE value="correction bug scroll" />
     <MESSAGE value="modification du hover des tableau" />
-    <option name="LAST_COMMIT_MESSAGE" value="modification du hover des tableau" />
+    <MESSAGE value="modif d'un tableau" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif d'un tableau" />
   </component>
   <component name="WindowStateProjectService">
     <state x="373" y="92" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588670823904">
@@ -316,10 +322,10 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="483" y="302" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.821@0.23.1440.821" timestamp="1588080447642" />
-    <state x="423" y="101" key="CommitChangelistDialog2" timestamp="1588690939423">
+    <state x="423" y="101" key="CommitChangelistDialog2" timestamp="1588691893695">
       <screen x="0" y="0" width="1680" height="997" />
     </state>
-    <state x="423" y="101" key="CommitChangelistDialog2/0.0.1680.997@0.0.1680.997" timestamp="1588690939423" />
+    <state x="423" y="101" key="CommitChangelistDialog2/0.0.1680.997@0.0.1680.997" timestamp="1588691893695" />
     <state x="423" y="101" key="CommitChangelistDialog2/0.0.1680.998@0.0.1680.998" timestamp="1588673643555" />
     <state x="451" y="257" key="NewPhpClassDialog" timestamp="1588536796530">
       <screen x="0" y="23" width="1440" height="821" />
@@ -329,13 +335,14 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.821@0.23.1440.821" timestamp="1588579176752" />
-    <state x="440" y="238" key="Vcs.Push.Dialog.v2" timestamp="1588690942428">
+    <state x="440" y="238" key="Vcs.Push.Dialog.v2" timestamp="1588691901890">
       <screen x="0" y="0" width="1680" height="997" />
     </state>
-    <state x="440" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.997@0.0.1680.997" timestamp="1588690942428" />
-    <state x="400" y="190" width="639" height="486" key="find.popup" timestamp="1588081216981">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="440" y="238" key="Vcs.Push.Dialog.v2/0.0.1680.997@0.0.1680.997" timestamp="1588691901890" />
+    <state x="467" y="203" width="746" height="591" key="find.popup" timestamp="1588691899087">
+      <screen x="0" y="0" width="1680" height="997" />
     </state>
+    <state x="467" y="203" width="746" height="591" key="find.popup/0.0.1680.997@0.0.1680.997" timestamp="1588691899087" />
     <state x="400" y="190" width="639" height="486" key="find.popup/0.23.1440.821@0.23.1440.821" timestamp="1588081216981" />
   </component>
 </project>
