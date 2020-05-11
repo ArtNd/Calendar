@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title 'Acceuil' %}
+{% block title 'Accueil' %}
 
 {% block body %}
     <style>
@@ -119,16 +119,17 @@
                                         Calendar est un site de réservation de salles qui peut être mis à disposition pour l’environnement informatique d’un école ou d’un établissement (par exemple l'ICAM).
                                     </p>
                                     <p class="text-monospace hvr-underline-reveal">
-                                        Ce site permet à un élève ou tout autre personne autorisée de réserver l’accès à une salle de classe, une salle de sport, aux salles des associations étudiantes…
+                                        Ce site permet à un élève ou tout autre personne autorisée de réserver l’accès à une salle de classe, à une salle de sport, aux salles des associations étudiantes…
                                     </p>
                                     <p class="text-monospace hvr-underline-reveal">
                                         Concernant la réservation des salles, certaines peuvent être réservées par tout le monde, d’autres requièrent l’autorisation d’un administrateur des salles (membre de l’établissement, membre du BDE, membre désigné des assos mettant à disposition leurs salles, etc.).
                                     </p>
                                     <p class="text-monospace hvr-underline-reveal">
-                                        Pour réserver une salle, il faudra indiquer dans un formulaire ; le nom d’une salle (liste déroulante, l’heure de début de créneau, l’heure de fin de créneau, les participants, le motif, etc.)
+                                        Pour réserver une salle, il faut définir un titre à notre réservation (qui sert de motif pour la réservation), indiquer un créneau (date/heure de début et fin).
+                                        Les salles disponibles pour ces créneaux seront donc visibles. En fonction de la salle, il est possible de réserver directement, ou bien de demander une réservation qui sera ensuite acceptée par un responsable.
                                     </p>
                                     <p class="text-monospace hvr-underline-reveal">
-                                        Le site web se divisera en deux avec d’un côté, un partie client (frontend) accessible par tous, et une partie administrateur (backend) accessible uniquement pour certains utilisateurs.
+                                        Le site web se divisera en deux parties avec d’un côté, une partie client (frontend) accessible par tous, et une partie administrateur (backend) accessible uniquement pour certains utilisateurs.
                                    </p>
                                     <form action="https://github.com/ArtNd/Calendar/blob/master/README.md">
                                         <button type="submit" class="btn btn-warning hvr-ripple-in" style="background: rgba(244,238,100,0.9)">
