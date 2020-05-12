@@ -22,8 +22,6 @@ class RoomRepository extends ServiceEntityRepository
     public function getAvailableRooms($date_start, $date_final)
     {
         $em = $this->getEntityManager();
-        $qb = $em->createQueryBuilder();
-
 
         $qb = $em->createQueryBuilder();
 
