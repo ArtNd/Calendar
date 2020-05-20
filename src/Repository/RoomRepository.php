@@ -26,7 +26,7 @@ class RoomRepository extends ServiceEntityRepository
         $qb = $em->createQueryBuilder();
 
         $nots = $em->createQuery("
-    	SELECT IDENTITY(b.room) FROM App:Booking b
+    	SELECT (b.room) FROM App:Booking b
         	WHERE NOT (b.endAt   < '$date_start'
            	OR
            	b.beginAt > '$date_final')
