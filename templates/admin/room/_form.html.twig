@@ -12,5 +12,10 @@
             {{ form_row(form.authorization) }}
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.options) }}
+        </div>
+    </div>
     <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
 {{ form_end(form) }}

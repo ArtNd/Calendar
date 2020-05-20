@@ -47,9 +47,15 @@ class Room
      */
     private $authorization;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Option", inversedBy="rooms")
+     */
+    private $options;
+
     public function __construct()
     {
         $this->bookings = new ArrayCollection();
+        $this->options = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -120,6 +126,34 @@ class Room
     public function setAuthorization(bool $authorization): self
     {
         $this->authorization = $authorization;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Option[]
+     */
+    public function getOptions(): Collection
+    {
+        return $this->options;
+    }
+
+    public function addOption(Option $option): self
+    {
+        if (!$this->options->contains($option)) {
+            $this->options[] = $option;
+            $option->addRoom($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOption(Option $option): self
+    {
+        if ($this->options->contains($option)) {
+            $this->options->removeElement($option);
+            $option->removeRoom($this);
+        }
 
         return $this;
     }

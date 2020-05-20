@@ -1,0 +1,16 @@
+{% extends 'admin/option/base_option.html.twig' %}
+
+{% block title 'Éditer une option' %}
+
+{% block body %}
+<body>
+    <div class="jumbotron transparence">
+        <div class="container mt-4">
+            <h2>Éditer la salle</h2>
+            {{ include ('admin/option/_form.html.twig', {button: 'Éditer'}) }}
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+

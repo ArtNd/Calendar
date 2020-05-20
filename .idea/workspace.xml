@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminOptionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Option.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/option/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/option/base_option.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/option/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/option/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/option/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RoomType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RoomType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/room/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/room/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +180,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1bABrPq2RZyMuWlBeibyd6t2mWB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -181,18 +194,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/manager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/admin/option" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/profile" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/admin/option" />
       <recent name="$PROJECT_DIR$/templates/manager" />
       <recent name="$PROJECT_DIR$/templates/profile/booking" />
       <recent name="$PROJECT_DIR$/templates/admin/room" />
       <recent name="$PROJECT_DIR$/templates/admin/manager" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/profile" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -219,7 +233,7 @@
       <workItem from="1589276380011" duration="469000" />
       <workItem from="1589288662877" duration="1377000" />
       <workItem from="1589348401237" duration="27000" />
-      <workItem from="1589967147786" duration="866000" />
+      <workItem from="1589967147786" duration="5116000" />
     </task>
     <task id="LOCAL-00001" summary="amélioration de la technique de déplacement de dossier en render">
       <created>1588673644029</created>
@@ -322,14 +336,16 @@
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="339" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.821@0.23.1440.821" timestamp="1588068523611" />
-    <state x="458" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1588579323963">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="458" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589970681147">
+      <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="458" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.821@0.23.1440.821" timestamp="1588579323963" />
-    <state x="483" y="302" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1588080447642">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="458" y="195" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.822@0.23.1440.822" timestamp="1589970681147" />
+    <state x="483" y="302" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589970968149">
+      <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="483" y="302" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.821@0.23.1440.821" timestamp="1588080447642" />
+    <state x="483" y="302" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.822@0.23.1440.822" timestamp="1589970968149" />
     <state x="423" y="101" key="CommitChangelistDialog2" timestamp="1588691893695">
       <screen x="0" y="0" width="1680" height="997" />
     </state>
@@ -339,10 +355,11 @@
       <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state width="219" height="457" key="HiddenNamespacesPopup/0.23.1440.823@0.23.1440.823" timestamp="1589215246736" />
-    <state x="451" y="257" key="NewPhpClassDialog" timestamp="1588536796530">
-      <screen x="0" y="23" width="1440" height="821" />
+    <state x="451" y="257" key="NewPhpClassDialog" timestamp="1589970642074">
+      <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state x="451" y="257" key="NewPhpClassDialog/0.23.1440.821@0.23.1440.821" timestamp="1588536796530" />
+    <state x="451" y="257" key="NewPhpClassDialog/0.23.1440.822@0.23.1440.822" timestamp="1589970642074" />
     <state width="500" height="445" key="SwitcherDM" timestamp="1588579176752">
       <screen x="0" y="23" width="1440" height="821" />
     </state>

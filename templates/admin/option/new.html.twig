@@ -1,0 +1,15 @@
+{% extends 'admin/option/base_option.html.twig' %}
+
+{% block title 'Créer une option' %}
+
+{% block body %}
+<body>
+    <div class="jumbotron transparence">
+        <div class="container mt-4">
+            <h2>Créer une salle</h2>
+            {{ include ('admin/option/_form.html.twig', {button: 'Créer'}) }}
+        </div>
+    </div>
+</body>
+{% endblock %}
+
