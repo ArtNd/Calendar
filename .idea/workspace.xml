@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="256fa979-1749-4310-969d-f82d6a0821c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/RoomSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BookingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RoomRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RoomRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BookingType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RoomSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RoomSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/manager/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/manager/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/booking/book.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/booking/book.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/translations/forms.fr.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/translations/forms.fr.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +230,7 @@
       <workItem from="1589276380011" duration="469000" />
       <workItem from="1589288662877" duration="1377000" />
       <workItem from="1589348401237" duration="27000" />
-      <workItem from="1589967147786" duration="19261000" />
+      <workItem from="1589967147786" duration="19703000" />
     </task>
     <task id="LOCAL-00001" summary="amélioration de la technique de déplacement de dossier en render">
       <created>1588673644029</created>

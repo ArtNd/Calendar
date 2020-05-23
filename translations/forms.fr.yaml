@@ -7,11 +7,13 @@ Last name: Nom
 Email: Adresse mail
 Password: Mot de passe
 Repeat Password: Confirmation du mot de passe
-Begin at: Début
-End at: Fin
+Date from: Début
+Date to: Fin
 Year: Année
 Month: Mois
 Day: Jour
 Hour: Heure
 Minute: Minute
 Authorization: Permission
+Min capacity: Capacité minimale
+Options: Options

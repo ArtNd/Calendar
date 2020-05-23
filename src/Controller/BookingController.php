@@ -57,11 +57,10 @@ class BookingController extends AbstractController
         if ($form->isSubmitted() && $form->isValid())
         {
             $rooms = $roomRepository->getAvailableRooms($search);
+            $bookingData['title'] = $search->getTitle();
+            $bookingData['dateTo'] = $search->getDateTo()->format('Y-m-d H:i:s');
+            $bookingData['dateFrom'] = $search->getDateFrom()->format('Y-m-d H:i:s');
         }
-
-        $bookingData['title'] = $search->getTitle();
-        $bookingData['dateTo'] = $search->getDateTo()->format('Y-m-d H:i:s');
-        $bookingData['dateFrom'] = $search->getDateFrom()->format('Y-m-d H:i:s');
 
         return $this->render("profile/booking/book.html.twig", array(
             'form' => $form->createView(),

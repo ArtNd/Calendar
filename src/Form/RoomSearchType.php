@@ -38,7 +38,8 @@ class RoomSearchType extends AbstractType
         $resolver->setDefaults([
             'data_class'    => RoomSearch::class,
             'method'        => 'get',
-            'csrf_protection' =>  false
+            'csrf_protection' =>  false,
+            'translation_domain' => 'forms'
         ]);
     }
 

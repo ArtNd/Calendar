@@ -24,8 +24,6 @@
                 <div class="col">
                     {{ form_row(form.minCapacity)}}
                 </div>
-            </div>
-            <div class="row">
                 <div class="col">
                     {{ form_row(form.options)}}
                 </div>
@@ -36,40 +34,42 @@
         </div>
     </div>
 
-    <div class="jumbotron transparence">
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Salle</th>
-                        <th>Disponibilité</th>
-                        <th>Capacité</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for room in rooms %}
+    {% if rooms is not empty %}
+        <div class="jumbotron transparence">
+            <div class="container">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td>{{room.title}}</td>
-                            <td>Disponible</td>
-                            <td>{{ room.capacity }}</td>
-                            {% if room.authorization == 1 %}
-                                <td>
-                                    <a class="btn btn-success" href="{{ path('book.new.room', {'id_user': app.user.id, 'id_room': room.id, 'date_in': bookingData.dateFrom, 'date_out': bookingData.dateTo, 'title': bookingData.title, 'state': 1}) }}">Réserver maintenant</a>
-                                </td>
-                            {% elseif room.authorization == 0 %}
-                                <td>
-                                    <a class="btn btn-info" href="{{ path('book.new.room', {'id_user': app.user.id, 'id_room': room.id, 'date_in': bookingData.dateFrom, 'date_out': bookingData.dateTo, 'title': bookingData.title, 'state': 0}) }}">Demander la réservation</a>
-                                    <a tabindex="0" class="btn btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Pourquoi une demande de réservation ?" data-content="Cette salle nécessite l'accord d'un responsable pour que la réservation ait bien lieu">
-                                        <span class="fas fa-question-circle"></span>
-                                    </a>
-                                </td>
-                            {% endif %}
+                            <th>Salle</th>
+                            <th>Disponibilité</th>
+                            <th>Capacité</th>
+                            <th>Action</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {% for room in rooms %}
+                            <tr>
+                                <td>{{room.title}}</td>
+                                <td>Disponible</td>
+                                <td>{{ room.capacity }}</td>
+                                {% if room.authorization == 1 %}
+                                    <td>
+                                        <a class="btn btn-success" href="{{ path('book.new.room', {'id_user': app.user.id, 'id_room': room.id, 'date_in': bookingData.dateFrom, 'date_out': bookingData.dateTo, 'title': bookingData.title, 'state': 1}) }}">Réserver maintenant</a>
+                                    </td>
+                                {% elseif room.authorization == 0 %}
+                                    <td>
+                                        <a class="btn btn-info" href="{{ path('book.new.room', {'id_user': app.user.id, 'id_room': room.id, 'date_in': bookingData.dateFrom, 'date_out': bookingData.dateTo, 'title': bookingData.title, 'state': 0}) }}">Demander la réservation</a>
+                                        <a tabindex="0" class="btn btn-link" role="button" data-toggle="popover" data-trigger="focus" title="Pourquoi une demande de réservation ?" data-content="Cette salle nécessite l'accord d'un responsable pour que la réservation ait bien lieu">
+                                            <span class="fas fa-question-circle"></span>
+                                        </a>
+                                    </td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+    {% endif %}
 </body>
 {% endblock %}
