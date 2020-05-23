@@ -5,6 +5,7 @@ namespace App\Entity;
 
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class RoomSearch
 {
@@ -20,6 +21,7 @@ class RoomSearch
 
     /**
      * @var DateTime
+     * @Assert\GreaterThan(propertyPath="dateFrom")
      */
     private $dateTo;
 

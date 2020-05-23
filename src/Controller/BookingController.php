@@ -67,7 +67,6 @@ class BookingController extends AbstractController
             'rooms' => $rooms,
             'bookingData'  => $bookingData
         ));
-
     }
 
     /**
@@ -79,8 +78,8 @@ class BookingController extends AbstractController
         $reservation = new Booking();
         $date_start = new \DateTime( $date_in );
         $date_end = new \DateTime($date_out);
-        $reservation->setBeginAt( $date_start );
-        $reservation->setEndAt( $date_end );
+        $reservation->setBeginAt($date_start);
+        $reservation->setEndAt($date_end);
         $reservation->setTitle($title);
         $reservation->setState($state);
 
@@ -88,6 +87,7 @@ class BookingController extends AbstractController
             ->getDoctrine()
             ->getRepository('App:User')
             ->find($id_user);
+
         $room = $this
             ->getDoctrine()
             ->getRepository('App:Room')

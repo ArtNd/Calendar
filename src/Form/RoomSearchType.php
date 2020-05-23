@@ -19,8 +19,12 @@ class RoomSearchType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('dateFrom', DateTimeType::class)
-            ->add('dateTo', DateTimeType::class)
+            ->add('dateFrom', DateTimeType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('dateTo', DateTimeType::class, [
+                'widget' => 'single_text',
+            ])
             ->add('minCapacity', IntegerType::class, [
                 'required'  => false
             ])
