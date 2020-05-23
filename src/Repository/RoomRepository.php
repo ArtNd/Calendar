@@ -3,7 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Room;
+use App\Entity\RoomSearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,11 +22,14 @@ class RoomRepository extends ServiceEntityRepository
         parent::__construct($registry, Room::class);
     }
 
-    public function getAvailableRooms($date_start, $date_final)
+    public function getAvailableRooms(RoomSearch $search)
     {
         $em = $this->getEntityManager();
 
         $qb = $em->createQueryBuilder();
+
+        $date_start = $search->getDateFrom()->format('Y-m-d H:i:s');
+        $date_final = $search->getDateTo()->format('Y-m-d H:i:s');
 
         $nots = $em->createQuery("
     	SELECT IDENTITY (b.room) FROM App:Booking b
@@ -38,14 +44,33 @@ class RoomRepository extends ServiceEntityRepository
 
         $query = $qb->select('r')
             ->from('App:Room', 'r')
-            ->where($qb->expr()->notIn('r.id', $dql_query ))
-            ->getQuery()
-            ->getResult();
+            ->andWhere($qb->expr()->notIn('r.id', $dql_query ));
 
-        try {
+        if ($search->getMinCapacity())
+        {
+            $query =  $query
+                ->andWhere('r.capacity >= :mincapacity')
+                ->setParameter('mincapacity', $search->getMinCapacity());
+        }
 
-            return $query;
-        } catch (\Doctrine\ORM\NoResultException $e) {
+        if ($search->getOptions()->count() > 0)
+        {
+            $k = 0;
+            foreach ($search->getOptions() as $option)
+            {
+                $k++;
+                $query = $query
+                    ->andWhere(":option$k MEMBER OF r.options")
+                    ->setParameter("option$k", $option);
+            }
+        }
+
+        try
+        {
+            return $query->getQuery()->getResult();
+        }
+        catch (\Doctrine\ORM\NoResultException $e)
+        {
             return null;
         }
     }

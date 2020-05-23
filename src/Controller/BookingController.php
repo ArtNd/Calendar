@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Booking;
+use App\Entity\RoomSearch;
 use App\Form\BookingType;
+use App\Form\RoomSearchType;
 use App\Repository\BookingRepository;
+use App\Repository\RoomRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -42,49 +44,31 @@ class BookingController extends AbstractController
     /**
      * @Route("/book/{id_user}", name="booking.new")
      * @param Request $request
-     * @param $id_user
      * @return Response
      */
-    public function book(Request $request, $id_user)
+    public function book(Request $request, RoomRepository $roomRepository)
     {
-        $data = [];
-        $data['id_user'] = $id_user;
-
-        $data['rooms'] = null;
-        $data['dates']['from'] = '';
-        $data['dates']['to'] = '';
-        $data['title'] = '';
-        $form = $this  ->createFormBuilder()
-            ->add('dateFrom')
-            ->add('dateTo')
-            ->add('title')
-            ->getForm();
-
+        $search = new RoomSearch();
+        $rooms = [];
+        $bookingData = [];
+        $form = $this->createForm(RoomSearchType::class, $search);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
-            $form_data = $form->getData();
-
-            $data['dates']['from'] = $form_data['dateFrom'];
-            $data['dates']['to'] = $form_data['dateTo'];
-            $data['title'] = $form_data['title'];
-
-            $em = $this->getDoctrine()->getManager();
-            $rooms = $em->getRepository('App:Room')
-                ->getAvailableRooms($form_data['dateFrom'], $form_data['dateTo']);
-
-            $data['rooms'] = $rooms;
-
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $rooms = $roomRepository->getAvailableRooms($search);
         }
 
-        $user = $this
-            ->getDoctrine()
-            ->getRepository('App:User')
-            ->find($id_user);
+        $bookingData['title'] = $search->getTitle();
+        $bookingData['dateTo'] = $search->getDateTo()->format('Y-m-d H:i:s');
+        $bookingData['dateFrom'] = $search->getDateFrom()->format('Y-m-d H:i:s');
 
-        $data['user'] = $user;
-        return $this->render("profile/booking/book.html.twig", $data
-        );
+        return $this->render("profile/booking/book.html.twig", array(
+            'form' => $form->createView(),
+            'rooms' => $rooms,
+            'bookingData'  => $bookingData
+        ));
+
     }
 
     /**
